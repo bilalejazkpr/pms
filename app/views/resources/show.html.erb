@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-hover">
+  <tr>
+<td>
+  <strong>Name:</strong>
+</td>
+<td>
+  <%= @resource.name %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Job title:</strong>
+</td>
+<td>
+  <%= @resource.job_title %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Email:</strong>
+</td>
+<td>
+  <%= @resource.email %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Username:</strong>
+</td>
+<td>
+  <%= @resource.username %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Password:</strong>
+  </td>
+    <td>
+  <%= @resource.password %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Cnic:</strong>
+</td>
+<td>
+  <%= @resource.cnic %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Experience:</strong>
+</td>
+<td>
+  <%= @resource.experience %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Status:</strong>
+</td>
+<td>
+  <%= @resource.status %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Require training:</strong>
+</td>
+<td>
+  <%= @resource.require_training %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Date added:</strong>
+</td>
+<td>
+  <%= @resource.date_added %>
+</td>
+</tr>
+<tr>
+<td>
+  <strong>Date updated:</strong>
+</td>
+<td>
+  <%= @resource.date_updated %>
+</td>
+</tr>
+</table>
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>

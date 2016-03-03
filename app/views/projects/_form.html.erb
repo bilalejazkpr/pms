@@ -1,0 +1,56 @@
+<ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Projects</a></li>
+          <li class="active"><a href="/projects/new">Add New Project</a></li>
+          <li><a href="/projects">All Projects</a></li>
+        </ol>
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :coordinator %><br>
+    <%= f.text_field :coordinator, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %><br>
+    <%= f.select(:category, options_for_select([['Personal'], ['Office'], ['Commercial']]), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date %><br>
+    <%= f.date_field :start_date, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deadline %><br>
+    <%= f.date_field :deadline, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :finish_date %><br>
+    <%= f.date_field :finish_date, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

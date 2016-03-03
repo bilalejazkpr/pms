@@ -1,0 +1,33 @@
+class CreateResources < ActiveRecord::Migration
+  def change
+
+    create_table :resources do |t|
+      t.string :name
+      t.string :job_title
+      t.string :email
+      t.string :username
+      t.string :password
+      t.string :cnic
+      t.string :experience
+      t.string :status
+      t.string :require_training
+      t.string :date_added
+      t.string :date_updated
+
+      t.timestamps null: false
+    end
+
+
+      create_table :assignments do |t|
+      t.belongs_to :resource, index: true
+      t.string :name_assignment
+      t.string :description
+      t.string :deadline
+      t.string :idresource
+      t.string :idproject
+
+      t.timestamps null: false
+    end
+
+  end
+end

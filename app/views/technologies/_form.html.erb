@@ -1,0 +1,32 @@
+<ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Technologies</a></li>
+          <li class="active"><a href="/technologies/new">Add New Technology</a></li>
+          <li><a href="/technologies">All Technologies</a></li>
+        </ol>
+<%= form_for(@technology) do |f| %>
+  <% if @technology.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@technology.errors.count, "error") %> prohibited this technology from being saved:</h2>
+
+      <ul>
+      <% @technology.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name_technology %><br>
+    <%= f.text_field :name_technology, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,64 @@
+<ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Clients</a></li>
+          <li class="active"><a href="/clients/new">Add New Client</a></li>
+          <li><a href="/clients">All Clients</a></li>
+        </ol>
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name_client %><br>
+    <%= f.text_field :name_client, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %><br>
+    <%= f.text_area :address, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :is_experienced %><br>
+    <%= f.select(:is_experienced, options_for_select([['Yes'], ['No']]), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %><br>
+    <%= f.text_field :status, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

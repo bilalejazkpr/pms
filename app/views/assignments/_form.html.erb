@@ -1,0 +1,48 @@
+<ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Assignments</a></li>
+          <li class="active"><a href="/assignments/new">Add New Assignment</a></li>
+          <li><a href="/assignments">All Assignments</a></li>
+        </ol>
+<%= form_for(@assignment) do |f| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name_assignment %><br>
+    <%= f.text_field :name_assignment, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deadline %><br>
+    <%= f.date_field :deadline, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :idresource %><br>
+    <%= f.text_field :idresource, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :idproject %><br>
+    <%= f.text_field :idproject, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

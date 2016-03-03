@@ -1,0 +1,61 @@
+<%= form_for(@resource) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+      <% @resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :job_title %><br>
+    <%= f.text_field :job_title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cnic %><br>
+    <%= f.text_field :cnic, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %><br>
+    <%= f.select(:status, options_for_select([['Admin'], ['Employee']]), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :require_training %><br>
+    <%= f.select(:require_training, options_for_select([['Yes'], ['No']]), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_added %><br>
+    <%= f.date_field :date_added, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_updated %><br>
+    <%= f.date_field :date_updated, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

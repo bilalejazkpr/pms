@@ -1,0 +1,48 @@
+  <ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Trainings</a></li>
+          <li class="active"><a href="/trainings/new">Add New Training</a></li>
+          <li><a href="/trainings">All Trainings</a></li>
+        </ol>
+<%= form_for(@training) do |f| %>
+  <% if @training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training.errors.count, "error") %> prohibited this training from being saved:</h2>
+
+      <ul>
+      <% @training.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %><br>
+    <%= f.select(:status, options_for_select([['Important'], ['Normal']]), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_start %><br>
+    <%= f.date_field :date_start, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_finish %><br>
+    <%= f.date_field :date_finish, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Training Resources</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Idtraining</th>
+      <th>Idresource</th>
+<th colspan="3" style="text-align:center;">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @training_resources.each do |training_resource| %>
+      <tr>
+        <td><%= training_resource.idtraining %></td>
+        <td><%= training_resource.idresource %></td>
+        <td><%= link_to 'Show', training_resource %></td>
+        <td><%= link_to 'Edit', edit_training_resource_path(training_resource) %></td>
+        <td><%= link_to 'Destroy', training_resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Training resource', new_training_resource_path, class: "btn btn-link" %>

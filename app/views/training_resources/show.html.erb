@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idtraining:</strong>
+  <%= @training_resource.idtraining %>
+</p>
+
+<p>
+  <strong>Idresource:</strong>
+  <%= @training_resource.idresource %>
+</p>
+
+<%= link_to 'Edit', edit_training_resource_path(@training_resource) %> |
+<%= link_to 'Back', training_resources_path %>

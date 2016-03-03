@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  coordinator: MyString
+  category: MyString
+  notes: MyString
+  start_date: MyString
+  deadline: MyString
+  finish_date: MyString
+
+two:
+  title: MyString
+  coordinator: MyString
+  category: MyString
+  notes: MyString
+  start_date: MyString
+  deadline: MyString
+  finish_date: MyString

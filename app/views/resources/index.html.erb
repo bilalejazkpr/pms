@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Resources</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Job title</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Cnic</th>
+      <th>Experience</th>
+      <th>Status</th>
+      <th>Require training</th>
+      <th>Date added</th>
+      <th>Date updated</th>
+<th colspan="3" style="text-align:center;">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.name %></td>
+        <td><%= resource.job_title %></td>
+        <td><%= resource.email %></td>
+        <td><%= resource.username %></td>
+        <td><%= resource.password %></td>
+        <td><%= resource.cnic %></td>
+        <td><%= resource.experience %></td>
+        <td><%= resource.status %></td>
+        <td><%= resource.require_training %></td>
+        <td><%= resource.date_added %></td>
+        <td><%= resource.date_updated %></td>
+        <td><%= link_to 'Show', resource %></td>
+        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resource', new_resource_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idproject: 1
+  idresource: 1
+  id_client: 1
+  idtechnology: 1
+  start_date: MyString
+  finish_date: MyString
+  status: MyString
+
+two:
+  idproject: 1
+  idresource: 1
+  id_client: 1
+  idtechnology: 1
+  start_date: MyString
+  finish_date: MyString
+  status: MyString

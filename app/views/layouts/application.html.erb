@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PMS</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery-1', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'bootstrap', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'neon-core', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'neon-theme', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'neon-forms', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'entypo', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'animation', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'entypo-codes', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'entypo-embedded', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'jquery-jvectormap-1.2.2', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'main', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'main-gsap', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'bootstrap', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'joinable', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'resizeable', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'neon-api', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery-sparkline', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'rikshaw.min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'raphael-min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'morris-min', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'toastr', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'neon-chat', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'neon-custom', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'neon-demo', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'less', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'neon-skins', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'scrollMonitor', 'data-turbolinks-track' => true %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    
+    <%= render 'layouts/navigation' %>   
+    <p class="alert"><%= alert %></p>
+    <div class="container">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+      <%= yield %>
+  </div>
+</div>
+</div>
+
+    
+  </body>
+</html>
+
+

@@ -1,0 +1,16 @@
+class CreateAssignments < ActiveRecord::Migration
+  def change
+    create_table :assignments do |t|
+     t.references :resource, index: true
+      t.string :name_assignment
+      t.string :description
+      t.string :deadline
+      t.string :idresource
+      t.string :idproject
+
+      t.timestamps null: false
+    end
+    add_index :assignments, :idresource
+
+  end
+end

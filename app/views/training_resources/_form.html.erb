@@ -1,0 +1,36 @@
+<ol class="breadcrumb">
+          <li>
+            <a href="dashboard.php">
+              <i class="entypo-folder"></i>
+              Dashboard
+            </a>
+          </li>
+          <li><a href="#">Assigned Trainings</a></li>
+          <li class="active"><a href="/training_resources/new">Assign New Training</a></li>
+          <li><a href="/training_resources">All Assigned Trainings</a></li>
+        </ol>
+<%= form_for(@training_resource) do |f| %>
+  <% if @training_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training_resource.errors.count, "error") %> prohibited this training_resource from being saved:</h2>
+
+      <ul>
+      <% @training_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :idtraining %><br>
+    <%= f.text_field :idtraining, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :idresource %><br>
+    <%= f.text_field :idresource, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
